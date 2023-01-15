@@ -1,0 +1,23 @@
+languageCode: "en-us"
+baseUrl: "tempetechie.net"
+title: "Tempe Techie's blog"
+theme: "anubis"
+paginate: 10
+enableRobotsTXT: true
+
+params:
+  author: "Tempe Techie"
+  style: "dark"
+  copyCodeButton: true # true by default
+  social:
+  - id: github
+    name: tempe-techie
+  - id: twitter
+    name: tempetechie
+  images:
+    - cover.jpg # relative path to "static" directory
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # enable raw HTML in Markdown
