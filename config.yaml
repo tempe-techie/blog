@@ -1,5 +1,5 @@
 languageCode: "en-us"
-baseUrl: "tempetechie.net"
+baseUrl: "https://tempetechie.net"
 title: "Tempe Techie's blog"
 theme: "anubis"
 paginate: 10
