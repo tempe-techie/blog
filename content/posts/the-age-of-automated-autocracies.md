@@ -10,7 +10,7 @@ This meant that running an autocracy was difficult, as there was a higher chance
 
 ### In the age of automation, things have changed 
 
-Autocrats can now use cameras and listening devices to monitor citizens, and this monitoring can be done by AI, which reduces the need for human labor and brings results faster.
+Autocrats can now use cameras and listening devices to monitor citizens, and this monitoring can be done by AI, which reduces the need for human labor and brings results faster[^1].
 
 Furthermore, since most payments are now done digitally, it is easier for autocrats to freeze the assets of dissidents and subdue them to stop resistance. If someone has financial troubles, they are more focused on finding food rather than resisting the government. 
 
@@ -29,3 +29,5 @@ Zero-knowledge technology and ZK proofs also play a role in resisting automated 
 Overall, these tools can help humanity resist the danger of automated autocracies. However, it is important to start building and using this technology even in liberal democracies, as you never know when a dictator may seize power. 
 
 After all, many dictators were initially elected democratically.
+
+[^1]: *These systems are used not only by autocrats, but also by democracies as explained by Yuval Noah Harari in [his interview with Lex Fridman](https://youtu.be/Mde2q7GFCrw?t=4896).*
