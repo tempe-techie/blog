@@ -34,11 +34,17 @@ A better approach is to keep a static receiving address, but have a distinct ide
 
 To differentiate between multiple customers paying simultaneously, payment IDs come to the rescue. There are three methods for incorporating payment IDs. 
 
+**A) Smart contract wallets**
+
 One approach involves using a smart contract as the receiving wallet, which can accept parameters in its payment function, including a payment ID. However, this method requires a merchant to deploy the smart contract wallet on each supported chain. And these wallets need to have the same address.
 
 For merchants preferring to use an ordinary (EOA) address as the receiving address (instead of a smart contract wallet), alternative methods are available. 
 
+**B) Calldata**
+
 One option involves receiving payment ID in transaction calldata. Calldata is sometimes used for onchain communication, so why not using it for payment IDs?
+
+**C) Last 6 digits**
 
 Another interesting solution involves encoding the payment ID as the last 2-6 digits of the payment amount. For instance, if a payment amount is 16 DAI, the merchant could append a unique payment ID as the last 6 digits of the amount (e.g., 16.000000000000123456 DAI). 
 

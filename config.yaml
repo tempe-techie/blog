@@ -12,8 +12,8 @@ params:
   social:
   - id: github
     name: tempe-techie
-  - id: twitter
-    name: tempetechie
+  - id: farcaster
+    name: tempetechie.eth
   images:
     - cover.jpg # relative path to "static" directory
 
