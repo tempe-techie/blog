@@ -9,6 +9,7 @@ params:
   author: "Tempe Techie"
   style: "dark"
   copyCodeButton: true # true by default
+  facebook_admin: "" # Facebook Admin ID for OpenGraph (optional)
   social:
   - id: github
     name: tempe-techie
