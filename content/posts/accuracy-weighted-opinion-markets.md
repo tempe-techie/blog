@@ -18,7 +18,7 @@ That's where **opinion markets** come in.
 
 Opinion markets flip the concept of prediction markets on its head.
 
-Instead of relying on an external truth, opinion markets simply try to surface the collective sentiment. There *isn't* a final "correct" answer, just whatever the majority ends up thinking.
+Instead of relying on an external truth, opinion markets simply try to surface the collective sentiment. There isn't a final "correct" answer, just whatever the majority ends up thinking.
 
 These markets make sense for subjective questions like:
 
@@ -75,8 +75,8 @@ You're expressing your real taste (without the risk of losing money for that) wh
 
 The key shift:
 
-👉 You aren't rewarded for agreeing with the majority.
-👉 You're rewarded for correctly estimating what the majority will be.
+- You are **not** rewarded for agreeing with the majority.
+- You're rewarded for correctly estimating what the majority will be.
 
 So even if you're in the minority opinion, you can still profit, as long as you accurately gauge where the crowd will land.
 
