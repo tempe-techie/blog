@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accuracy-Weighted Opinion Markets | Tempe Techie's Blog</title>
+    <meta
+      name="description"
+      content="A better opinion market design that rewards prediction accuracy about crowd sentiment, not conformity."
+    />
+    <meta name="author" content="Tempe Techie" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0b0b0f" />
+    <link rel="canonical" href="https://tempetechie.net/posts/accuracy-weighted-opinion-markets/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Tempe Techie's Blog" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:published_time" content="2025-12-30T20:23:42" />
+    <meta property="og:title" content="Accuracy-Weighted Opinion Markets: Getting Truer Signals From Subjective Questions" />
+    <meta
+      property="og:description"
+      content="A better opinion market design that rewards prediction accuracy about crowd sentiment, not conformity."
+    />
+    <meta property="og:url" content="https://tempetechie.net/posts/accuracy-weighted-opinion-markets/" />
+    <meta property="og:image" content="https://tempetechie.net/assets/img/blog-images/accuracy-weighted-opinion-markets.jpg" />
+    <meta property="og:image:alt" content="Accuracy-Weighted Opinion Markets" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Accuracy-Weighted Opinion Markets: Getting Truer Signals From Subjective Questions" />
+    <meta
+      name="twitter:description"
+      content="A better opinion market design that rewards prediction accuracy about crowd sentiment, not conformity."
+    />
+    <meta name="twitter:image" content="https://tempetechie.net/assets/img/blog-images/accuracy-weighted-opinion-markets.jpg" />
+    <meta name="twitter:image:alt" content="Accuracy-Weighted Opinion Markets" />
+
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+    <script src="/assets/js/theme.js"></script>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+  <body class="text-zinc-900 dark:text-zinc-100 antialiased">
+    <div class="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
+      <header class="mb-10 border-b border-zinc-200 pb-7 dark:border-zinc-800">
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <a href="/" class="text-sm text-zinc-600 underline underline-offset-4 dark:text-zinc-300">← Back to all posts</a>
+          <button
+            type="button"
+            data-theme-toggle
+            class="inline-flex h-10 items-center justify-center rounded-full border border-zinc-300 px-4 text-sm font-medium dark:border-zinc-700"
+            onclick="toggleTheme()"
+          ></button>
+        </div>
+        <p class="mb-3 text-xs uppercase tracking-[0.15em] text-zinc-500">December 30, 2025</p>
+        <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+          Accuracy-Weighted Opinion Markets: Getting Truer Signals From Subjective Questions
+        </h1>
+      </header>
+
+      <img
+        src="/assets/img/blog-images/accuracy-weighted-opinion-markets.jpg"
+        alt="Accuracy-Weighted Opinion Markets"
+        class="mb-10 w-full rounded-2xl border border-zinc-200 dark:border-zinc-800"
+      />
+
+      <article class="article-body text-[1.05rem] text-zinc-700 dark:text-zinc-200">
+        <p>Prediction markets have become popular in crypto and beyond because they're good at aggregating information.</p>
+
+        <p>
+          Ask a question like <em>"Who will win the 2028 U.S. presidential election?"</em> and people place bets based on what they think <strong>will</strong> happen.
+        </p>
+
+        <p>When reality arrives, the market settles to the <strong>correct outcome</strong>, and traders who were right get rewarded.</p>
+
+        <p>But <strong>not all</strong> interesting questions have a clear, verifiable answer. Sometimes, the goal isn't to predict reality - it's to understand <strong>how people feel</strong>.</p>
+
+        <p>That's where <strong>opinion markets</strong> come in.</p>
+
+        <h2>Opinion markets</h2>
+
+        <p>Opinion markets flip the concept of prediction markets on its head.</p>
+
+        <p>Instead of relying on an external truth, opinion markets simply try to surface the collective sentiment. There isn't a final "correct" answer, just whatever the majority ends up thinking.</p>
+
+        <p>These markets make sense for subjective questions like:</p>
+
+        <ul>
+          <li>"What's the best Christmas song?"</li>
+          <li>"Who's the funniest stand-up comedian?"</li>
+          <li>"Does apple taste better than banana?"</li>
+        </ul>
+
+        <p>There's no future event that will settle these. There's no oracle. The "truth" <em>is</em> the crowd.</p>
+
+        <h2>Problem: they reward conformity</h2>
+
+        <p>Most crypto opinion markets today work like this:</p>
+
+        <ol>
+          <li>You submit your opinion.</li>
+          <li>If your answer matches the <strong>majority opinion</strong>, you win.</li>
+          <li>If not, you lose.</li>
+        </ol>
+
+        <p>That creates a big incentive problem.</p>
+
+        <p>If someone holds a minority opinion (and they know it's probably not the majority) they're financially <strong>punished for being honest</strong>.</p>
+
+        <p>So instead, they either don't participate, or they vote with the crowd.</p>
+
+        <p>The result is that opinion markets drift toward <strong>over-representing majority views</strong> and under-representing minority perspectives.</p>
+
+        <p>Ironically, they become <strong>less accurate at showing real sentiment</strong>, even though that's the only thing they are meant to measure.</p>
+
+        <h2>A better idea: accuracy-weighted opinion markets</h2>
+
+        <p>A simple fix is to separate two different things:</p>
+
+        <ol>
+          <li>Your personal <strong>opinion</strong></li>
+          <li>Your <strong>estimate</strong> of how others will vote</li>
+        </ol>
+
+        <p>Think of it as combining opinion markets with something closer to <strong>precision/estimation markets</strong>.</p>
+
+        <p>Here's how it would work.</p>
+
+        <h3>Step 1: Two inputs instead of one</h3>
+
+        <p>Let's say the opinion market question is: "Is pineapple on pizza good?"</p>
+
+        <p>The user then submits two things:</p>
+
+        <ol>
+          <li>
+            <strong>Their opinion</strong><br />
+            Example: <em>"YES, pineapple on pizza is good."</em>
+          </li>
+          <li>
+            <strong>Their predicted ratio of opinions</strong><br />
+            Example: <em>"But I think only 10% will say YES and 90% will say NO."</em>
+          </li>
+        </ol>
+
+        <p>You're expressing your real taste (without the risk of losing money for that) while also making a separate prediction about the final distribution (that's where the real bet is).</p>
+
+        <h3>Step 2: Rewards are based only on the ratio</h3>
+
+        <p>The key shift:</p>
+
+        <ul>
+          <li>You are <strong>not</strong> rewarded for agreeing with the majority.</li>
+          <li>You're rewarded for correctly estimating what the majority will be.</li>
+        </ul>
+
+        <p>So even if you're in the minority opinion, you can still profit, as long as you accurately gauge where the crowd will land.</p>
+
+        <p>In our pizza example:</p>
+
+        <ul>
+          <li>You vote <strong>YES</strong> (you believe pineapple on pizza is good)</li>
+          <li>You predict <strong>10:90</strong> ratio (you think that 90% of responders will disagree with you)</li>
+          <li>The final market ends <strong>12:88</strong> (final outcome: 88% of responders disagree with you, 12% agree)</li>
+        </ul>
+
+        <p>This outcome means that you'd likely earn something (you were close enough to the final ratio), because you understood the social reality correctly, even though your preference wasn't the popular one.</p>
+
+        <h3>Step 3: What counts as "close enough"?</h3>
+
+        <p>There are different ways to design the payout. One simple model would be:</p>
+
+        <blockquote>
+          <p>Reward the <strong>top 10% of submissions</strong> that guess <strong>closest to the final ratio</strong>.</p>
+          <p>(If there's a tie, earlier answers get priority.)</p>
+        </blockquote>
+
+        <p>This encourages people to think carefully, participate early, and be honest about their own views.</p>
+
+        <h2>Why this matters</h2>
+
+        <p>Accuracy-weighted opinion markets solve two big issues at once:</p>
+
+        <ul>
+          <li><strong>They capture true opinions</strong>, including minority views, because people no longer feel pressured to conform.</li>
+          <li><strong>They still encourage serious, thoughtful participation</strong>, because rewards flow to those who understand social dynamics well.</li>
+        </ul>
+
+        <p>Instead of just revealing which camp is bigger, these markets reveal something richer:</p>
+
+        <blockquote>
+          <p>What people <strong>actually think</strong>, and how <strong>aware</strong> they are of the <strong>broader sentiment.</strong></p>
+        </blockquote>
+
+        <p>That's valuable for creators, brands, researchers, communities, DAOs, and anyone trying to read the room without distorting it.</p>
+
+        <h2>Incentivize honesty</h2>
+
+        <p>Opinion markets don't need to choose between honesty and incentives. By introducing accuracy-weighted mechanics (where people are rewarded for predicting <em>the crowd</em>, not joining it) we can build systems that:</p>
+
+        <ul>
+          <li>respect minority voices</li>
+          <li>reduce herd behavior</li>
+          <li>produce cleaner, more meaningful signals</li>
+        </ul>
+
+        <p>In a world where so much of our online life revolves around opinions, tools that capture sentiment without bias are worth building.</p>
+
+        <p>Accuracy-weighted opinion markets bring us a step closer to that future, and make subjective questions finally feel like fair games.</p>
+      </article>
+    </div>
+    <script>
+      syncThemeToggleLabel();
+    </script>
+  </body>
+</html>

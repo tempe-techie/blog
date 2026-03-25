@@ -1,15 +1,44 @@
+### OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+### Node / package managers
+node_modules/
+npm-cache/
+.npm/
+.pnpm-store/
+.yarn/
+
+### Python (local dev server)
+__pycache__/
+*.py[cod]
+.python-version
+
+### Environment / secrets
 .env
+.env.*
+!.env.example
 
-# Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
+### Editors / IDEs
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.swp
+*.swo
+*~
 
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
-
-# Temporary lock file while building
-/.hugo_build.lock
+### Build output (if added later)
+dist/
+build/
+.cache/

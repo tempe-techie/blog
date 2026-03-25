@@ -1,0 +1,12 @@
+{
+  "name": "tempe-blog",
+  "version": "1.0.0",
+  "description": "This repository is a static blog site built with plain HTML5 and Tailwind (CDN), without any static site generator.",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "dev": "python3 -m http.server 4173 && echo 'Server running at http://localhost:4173'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

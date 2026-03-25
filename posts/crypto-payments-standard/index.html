@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Standardizing Crypto Payments with QR Codes and Payment IDs | Tempe Techie's Blog</title>
+    <meta
+      name="description"
+      content="A practical crypto payment standard proposal using QR payloads, static receivers, and optional payment IDs."
+    />
+    <meta name="author" content="Tempe Techie" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tempetechie.net/posts/crypto-payments-standard/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Tempe Techie's Blog" />
+    <meta property="article:published_time" content="2023-07-11T09:23:42" />
+    <meta property="og:title" content="Standardizing Crypto Payments with QR Codes and Payment IDs" />
+    <meta property="og:description" content="A practical crypto payment standard proposal using QR payloads, static receivers, and optional payment IDs." />
+    <meta property="og:url" content="https://tempetechie.net/posts/crypto-payments-standard/" />
+    <meta property="og:image" content="https://tempetechie.net/assets/img/blog-images/crypto-payments-standard.jpg" />
+    <meta property="og:image:alt" content="Standardizing Crypto Payments with QR Codes and Payment IDs" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Standardizing Crypto Payments with QR Codes and Payment IDs" />
+    <meta name="twitter:description" content="A practical crypto payment standard proposal using QR payloads, static receivers, and optional payment IDs." />
+    <meta name="twitter:image" content="https://tempetechie.net/assets/img/blog-images/crypto-payments-standard.jpg" />
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: "class" };</script>
+    <script src="/assets/js/theme.js"></script>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+  <body class="text-zinc-900 dark:text-zinc-100 antialiased">
+    <div class="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
+      <header class="mb-10 border-b border-zinc-200 pb-7 dark:border-zinc-800">
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <a href="/" class="text-sm text-zinc-600 underline underline-offset-4 dark:text-zinc-300">← Back to all posts</a>
+          <button type="button" data-theme-toggle class="inline-flex h-10 items-center justify-center rounded-full border border-zinc-300 px-4 text-sm font-medium dark:border-zinc-700" onclick="toggleTheme()"></button>
+        </div>
+        <p class="mb-3 text-xs uppercase tracking-[0.15em] text-zinc-500">July 11, 2023</p>
+        <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">Standardizing Crypto Payments with QR Codes and Payment IDs</h1>
+      </header>
+      <img src="/assets/img/blog-images/crypto-payments-standard.jpg" alt="Crypto payments standard" class="mb-10 w-full rounded-2xl border border-zinc-200 dark:border-zinc-800" />
+      <article class="article-body text-[1.05rem] text-zinc-700 dark:text-zinc-200">
+        <p>
+          Recently, I listened to
+          <a href="https://youtu.be/y2SfT8ugjCk?t=828">Kartik's fireside chat with Vitalik at ETH Waterloo 2023</a>. During their conversation, Vitalik raised an interesting point
+          that despite being over a decade into the crypto revolution, everyday crypto payments are still not as user-friendly as they could be.
+        </p>
+
+        <p>
+          Imagine the convenience of paying for a cup of coffee or effortlessly sending a small payment to a friend who covered the restaurant bill. Vitalik emphasized the need for a
+          simpler system, one that could easily integrate with QR codes and mobile devices.
+        </p>
+
+        <p>Let's dive deeper into this topic and explore some possibilities on how to create a payments standard.</p>
+
+        <h2>Static QR Codes for Crypto Payments</h2>
+
+        <p>Firstly, let's consider the scenario where a merchant has a static QR code to receive crypto payments, identical for every customer.</p>
+
+        <p>
+          <img
+            src="https://bafybeihj5m3axoyo57pb4xid36iwaollsvftmarul5fqddvomh6w3vosuu.ipfs.w3s.link/albert-hu-RII9HuLDz4M-unsplash.jpg"
+            alt=""
+            class="my-6 w-full rounded-2xl border border-zinc-200 dark:border-zinc-800"
+          />
+        </p>
+
+        <p>The QR code contains information such as the merchant's crypto address, preferred cryptocurrencies, and supported networks or chains.</p>
+
+        <p>
+          However, there is a drawback with this approach. Because the QR code is the same for every customer, the merchant can only process one customer at a time.
+        </p>
+
+        <p>
+          They must wait for each payment to go through before attending to the next customer. Although this works well for smaller shops with lower traffic, it proves impractical for
+          larger businesses.
+        </p>
+
+        <h2>Dynamically Generated QR Codes</h2>
+
+        <p>For larger businesses aiming to process multiple customers in parallel, QR codes need to be dynamic instead of static (meaning each customer gets a different QR code).</p>
+
+        <p>
+          In the past, the conventional approach involved generating a different receiver address for each customer. However, this method presents various drawbacks. Mainly, transferring
+          received funds to a central address requires additional gas, incurring gas fees and leaving traces of dust on each receiving address in the EIP-1559 world.
+        </p>
+
+        <p>A better approach is to keep a static receiving address, but have a distinct identifier for each customer: A payment ID.</p>
+
+        <h2>The Role of Payment IDs</h2>
+
+        <p>To differentiate between multiple customers paying simultaneously, payment IDs come to the rescue. There are three methods for incorporating payment IDs.</p>
+
+        <p><strong>A) Smart contract wallets</strong></p>
+
+        <p>
+          One approach involves using a smart contract as the receiving wallet, which can accept parameters in its payment function, including a payment ID. However, this method requires
+          a merchant to deploy the smart contract wallet on each supported chain. And these wallets need to have the same address.
+        </p>
+
+        <p>
+          For merchants preferring to use an ordinary (EOA) address as the receiving address (instead of a smart contract wallet), alternative methods are available.
+        </p>
+
+        <p><strong>B) Calldata</strong></p>
+
+        <p>One option involves receiving payment ID in transaction calldata. Calldata is sometimes used for onchain communication, so why not using it for payment IDs?</p>
+
+        <p><strong>C) Last 6 digits</strong></p>
+
+        <p>
+          Another interesting solution involves encoding the payment ID as the last 2-6 digits of the payment amount. For instance, if a payment amount is 16 DAI, the merchant could
+          append a unique payment ID as the last 6 digits of the amount (e.g., 16.000000000000123456 DAI).
+        </p>
+
+        <p>If two users were to pay the same amount at the same time, they would receive different appended digits, differentiating their transactions.</p>
+
+        <h2>Establishing a Common Standard</h2>
+
+        <p>
+          In any case, a common standard for encoding payment data in a QR code is needed.
+        </p>
+
+        <p>
+          This standard would encompass the receiving address, supported coins or tokens, supported chains, payment amount (optional), and payment ID (optional).
+        </p>
+
+        <pre><code>{
+  "receiver": "0xb29050965a5ac70ab487aa47546cdcbc97dae45d",
+  "info": [
+    {
+      "chain": 100,
+      "address": "0x7f5c764cbc14f9669b88837ca1490cca17c31607",
+      "name": "USDC",
+      "amount": 16
+    },
+    {
+      "chain": 137,
+      "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+      "name": "USDC",
+      "amount": 16
+    },
+    {
+      "chain": 137,
+      "address": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+      "name": "USDT",
+      "amount": 16
+    }
+  ],
+  "id": "R7VB22"
+}</code></pre>
+
+        <p>
+          By establishing a common standard and encouraging crypto wallet providers to incorporate it, the practicality of crypto payments will greatly improve, especially with the advent
+          of low gas fees and fast confirmations on Layer 2 chains.
+        </p>
+
+        <p>It is worth noting that privacy concerns remain a drawback, but establishing a common standard would represent an important step forward.</p>
+      </article>
+    </div>
+    <script>syncThemeToggleLabel();</script>
+  </body>
+</html>

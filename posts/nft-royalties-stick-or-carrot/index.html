@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT royalties: Instead of a stick, use a carrot | Tempe Techie's Blog</title>
+    <meta name="description" content="A carrot-based approach to NFT royalty incentives that avoids forcing changes into every NFT contract." />
+    <meta name="author" content="Tempe Techie" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tempetechie.net/posts/nft-royalties-stick-or-carrot/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Tempe Techie's Blog" />
+    <meta property="article:published_time" content="2023-01-15T09:23:42" />
+    <meta property="og:title" content="NFT royalties: Instead of a stick, use a carrot" />
+    <meta property="og:description" content="A carrot-based approach to NFT royalty incentives that avoids forcing changes into every NFT contract." />
+    <meta property="og:url" content="https://tempetechie.net/posts/nft-royalties-stick-or-carrot/" />
+    <meta property="og:image" content="https://tempetechie.net/assets/img/blog-images/nft-royalties-stick-or-carrot.jpg" />
+    <meta property="og:image:alt" content="NFT royalties: Instead of a stick, use a carrot" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NFT royalties: Instead of a stick, use a carrot" />
+    <meta name="twitter:description" content="A carrot-based approach to NFT royalty incentives that avoids forcing changes into every NFT contract." />
+    <meta name="twitter:image" content="https://tempetechie.net/assets/img/blog-images/nft-royalties-stick-or-carrot.jpg" />
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: "class" };</script>
+    <script src="/assets/js/theme.js"></script>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+  <body class="text-zinc-900 dark:text-zinc-100 antialiased">
+    <div class="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
+      <header class="mb-10 border-b border-zinc-200 pb-7 dark:border-zinc-800">
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <a href="/" class="text-sm text-zinc-600 underline underline-offset-4 dark:text-zinc-300">← Back to all posts</a>
+          <button type="button" data-theme-toggle class="inline-flex h-10 items-center justify-center rounded-full border border-zinc-300 px-4 text-sm font-medium dark:border-zinc-700" onclick="toggleTheme()"></button>
+        </div>
+        <p class="mb-3 text-xs uppercase tracking-[0.15em] text-zinc-500">January 15, 2023</p>
+        <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">NFT royalties: Instead of a stick, use a carrot</h1>
+      </header>
+      <img src="/assets/img/blog-images/nft-royalties-stick-or-carrot.jpg" alt="NFT royalties" class="mb-10 w-full rounded-2xl border border-zinc-200 dark:border-zinc-800" />
+      <article class="article-body text-[1.05rem] text-zinc-700 dark:text-zinc-200">
+        <h2>Stick</h2>
+
+        <p>
+          In 2022,
+          <a href="https://decrypt.co/113698/opensea-breaks-silence-on-nft-royalties-but-creators-dont-like-what-they-hear">OpenSea introduced a solution</a>
+          to "encourage" NFT marketplaces to charge royalty fees. Any marketplace that would not comply, would get blacklisted. In the carrot-stick terms, this is the "stick" approach.
+        </p>
+
+        <p>
+          The way OpenSea's solution works is by requiring NFT contracts to include a
+          <a href="https://github.com/ProjectOpenSea/operator-filter-registry/tree/main/src">significant amount of extra code</a>
+          for enforcing royalties.
+        </p>
+
+        <p>
+          This leads to a larger codebase, higher gas costs, and the potential for bugs as the code is relatively new and hasn't been time-tested. Additionally, existing non-upgradable
+          NFTs cannot include these changes to their code.
+        </p>
+
+        <h2>Carrot</h2>
+
+        <p>Instead of the stick approach, we should consider the carrot approach.</p>
+
+        <p>
+          One good step in that direction is Gabe Leydon's
+          <a href="https://medium.com/limit-break/introducing-opt-in-programmable-royalties-and-more-through-staking-by-limit-break-3a166e3749e3">Limit Break</a>, which incentivizes the
+          use of royalty-friendly marketplaces by sharing future royalties with previous token holders.
+        </p>
+
+        <p>New NFTs can easily implement Limit Break's code, and existing NFTs can gain these new features through staking and wrapping.</p>
+
+        <p>However, wrapping an NFT is not a feasible solution for all collections, such as web3 domains.</p>
+
+        <p>Is there a way to encourage royalties without making changes to classic NFT codebases, such as OpenZeppelin's ERC-721 template?</p>
+
+        <h2>A single smart contract</h2>
+
+        <p>There may be a solution where only a single smart contract is needed. For all NFTs and marketplaces.</p>
+
+        <p>This smart contract would do the following:</p>
+
+        <ul>
+          <li>Allow the NFT collection owner to set a royalty fee.</li>
+          <li>Allow for royalties to be shared with previous NFT holders.</li>
+          <li>Keep track of previous NFT holders.</li>
+          <li>Keep a whitelist of royalty-compliant NFT marketplaces.</li>
+        </ul>
+
+        <p>
+          Only the whitelisted NFT marketplaces would be able to enter the address of a previous NFT holder to this joint smart contract once a trade has been done.
+        </p>
+
+        <p>
+          People would still be able to sell NFTs on exchanges that don't charge royalties, but in that case, they would not be entered into the joint smart contract as previous owners.
+        </p>
+
+        <p>This would incentivize people to trade on royalty-compliant marketplaces, but wouldn't prevent them from trading elsewhere (a carrot, not a stick).</p>
+
+        <p>
+          This system wouldn't require any changes to existing or future NFT contracts' codebase. All it would require is a single smart contract, or a set of a few smart contracts to
+          make it more modular and upgradeable.
+        </p>
+      </article>
+    </div>
+    <script>syncThemeToggleLabel();</script>
+  </body>
+</html>
