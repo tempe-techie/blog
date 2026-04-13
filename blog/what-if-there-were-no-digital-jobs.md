@@ -26,7 +26,7 @@ If digital jobs weren't an option, what kind of work would you do instead?
 
 Something physical. Something hands-on.
 
-Would you be a carpenter? A shoemaker? A nurse? A mover? A gardener?
+Would you be a carpenter? A shoemaker? A nurse? A mover? A gardener? An HVAC installer or maintainer?
 
 There are countless jobs like this, and many of them are already in high demand.
 
@@ -49,6 +49,8 @@ Take woodworking. If you get into it, you might one day renovate parts of your h
 Or take electronics. We're surrounded by more and more devices every year. At the same time, robotics is advancing, which means there will be an increasing need for maintenance and repairs. 
 
 Learning how electronic components work and how to wire them properly is a valuable skill.
+
+Another great example is HVAC (heating, ventilation, and air conditioning). Every home and building depends on it, and systems need regular installation, maintenance, and repair. It's a highly practical skill that combines basic electrical knowledge with hands-on work, without having to deal with the complexity of full electrical installations like panels and whole-building wiring.
 
 And even if you never turn it into a job, being able to fix your own devices can save you both time and money.
 
