@@ -97,6 +97,62 @@ body {
   margin: 1rem auto;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .article-body img {
+    cursor: zoom-in;
+  }
+}
+
+.img-lightbox {
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: 1.25rem;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.img-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.img-lightbox__img {
+  display: block;
+  max-width: min(96vw, 1400px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+
+.img-lightbox__close {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  background: rgba(24, 24, 27, 0.75);
+  color: #fafafa;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.img-lightbox__close:hover {
+  background: rgba(39, 39, 42, 0.95);
+}
+
 /* Homepage post cards: show full 16:9 preview without cropping */
 .post-card__img {
   width: 100%;
